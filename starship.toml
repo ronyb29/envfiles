@@ -1,0 +1,66 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+ 
+add_newline = false
+format = """$directory\
+$package\
+$git_branch$git_status\
+$fill\
+$all\
+$line_break$character"""
+
+[directory]
+read_only = ""
+style = "bg:blue fg:bright-white"
+format = "[ $path ]($style)"
+truncation_symbol = "…/"
+
+[directory.substitutions]
+"Documents" = " "
+"source" = " "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+
+[package]
+symbol = ' '
+format = "[ $symbol$version ](bg:bright-blue fg:bright-white)"
+version_format = "${raw}"
+
+[git_branch]
+format = "[ $symbol$branch ]($style)"
+style = "bg:green fg:black"
+
+[git_status]
+format = "[$all_status$ahead_behind ]($style)"
+style = "bg:green fg:black"
+
+[fill]
+symbol = "•"
+style = "bold bright-black"
+
+[gcloud]
+symbol = " "
+style = 'bg:69 fg:bright-white bold'
+format = '[ $symbol($project)(@$region) ]($style)'
+
+[battery]
+format = "[$symbol$percentage]($style)"
+
+[cmd_duration]
+style = "bold white bg:blue"
+min_time = 500
+format = '[ 祥$duration ]($style)'
+
+
+[python]
+symbol = "🐍"
+style = 'bg:226 fg:black'
+# format = '[ ${symbol}(${pyenv_prefix} ${version})( $virtualenv) ]($style)'
+format = '[ ${symbol}( $virtualenv) ]($style)'
+version_format = "$major.$minor"
+
+[nodejs]
+symbol = ""
+style = 'bg:white fg:black'
+format = '[ $symbol($version) ]($style)'
+version_format = "$major.$minor"
