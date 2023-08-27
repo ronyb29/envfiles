@@ -2,24 +2,28 @@
  
 add_newline = false
 format = """$directory\
-$package\
+$fill\
 $git_branch$git_status\
 $fill\
 $all\
-$line_break$character"""
+$line_break\
+$character"""
 
 [directory]
-read_only = ""
+read_only = " "
+home_symbol = ""
 style = "bg:blue fg:bright-white"
-format = "[ $path ]($style)"
+repo_root_style = "bg:blue fg:bright-white bold"
+format = "[$read_only$path]($style)"
+truncate_to_repo = false
 truncation_symbol = "…/"
 
 [directory.substitutions]
-"Documents" = " "
-"source" = " "
-"Downloads" = " "
-"Music" = " "
-"Pictures" = " "
+"/Documents" = ""
+"/Downloads" = ""
+"/Music" = ""
+"/Pictures" = ""
+"/source" = ""
 
 [package]
 symbol = ' '
@@ -28,20 +32,16 @@ version_format = "${raw}"
 
 [git_branch]
 format = "[ $symbol$branch ]($style)"
-style = "bg:green fg:black"
+style = "bg:green fg:bright-white"
 
-[git_status]
-format = "[$all_status$ahead_behind ]($style)"
-style = "bg:green fg:black"
-
-[fill]
-symbol = "•"
-style = "bold bright-black"
+[git_status] 
+style = "bg:green fg:bright-white"
+format = "[ $symbol$all_status$ahead_behind ]($style)"
 
 [gcloud]
 symbol = " "
 style = 'bg:69 fg:bright-white bold'
-format = '[ $symbol($project)(@$region) ]($style)'
+format = '[ $symbol$project(\($region\)) ]($style)'
 
 [battery]
 format = "[$symbol$percentage]($style)"
@@ -51,16 +51,16 @@ style = "bold white bg:blue"
 min_time = 500
 format = '[ 祥$duration ]($style)'
 
-
+########################################
 [python]
-symbol = "🐍"
-style = 'bg:226 fg:black'
+symbol = ""
+style = 'bold white bg:green'
 # format = '[ ${symbol}(${pyenv_prefix} ${version})( $virtualenv) ]($style)'
 format = '[ ${symbol}( $virtualenv) ]($style)'
 version_format = "$major.$minor"
 
 [nodejs]
-symbol = ""
+symbol = " "
 style = 'bg:white fg:black'
 format = '[ $symbol($version) ]($style)'
 version_format = "$major.$minor"
