@@ -1,5 +1,5 @@
 # basic stuff
-brew install iterm2 rectangle starship zsh-completions google-cloud-sdk coscreen
+brew install iterm2 rectangle starship zsh-completions zsh-syntax-highlighting google-cloud-sdk coscreen
 
 # devtools 
 brew install python@3.11 python@3.10 pipx postgresql@14 plantuml 

@@ -26,6 +26,7 @@ source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.
 # add pipx autocomplete
 eval "$(register-python-argcomplete pipx)"
 
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # starship prompt init
 eval "$(starship init zsh)"

@@ -1,7 +1,7 @@
 export CLICOLOR=1
 
 # add packages installed by pipx to path
-PATH+=/Users/rony.batista/.local/bin
+PATH+=$HOME/.local/bin
 
 # add other python versions at the end of path
 PATH+=/usr/local/opt/python@3.9/bin
